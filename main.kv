@@ -1,0 +1,23 @@
+# gerenciador de telas
+
+#:import utils kivy.utils
+
+
+
+    #:include kv/corteOsGastos.kv
+
+FloatLayout:
+    canvas:
+        Color:
+            rgb: utils.get_color_from_hex("#EEF6EA")
+        Rectangle
+            size: self.size
+            pos: self.pos
+    ScreenManager:
+        pos_hint:{"right": 1,"top": 1}
+        size_hint:1 , 1
+
+        id:screen_manager
+        CorteOsGastos:
+            name:"corteOsGastos"
+            id: corteOsGastos
