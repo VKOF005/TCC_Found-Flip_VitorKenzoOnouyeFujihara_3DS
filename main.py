@@ -1,18 +1,34 @@
 from kivy.app import App
 from kivy.lang import Builder
 from telas import *
-from botoes import *
+from elementosExtras import *
 
-#o back end, possui classes e funções feitas em python.
-#pode ser dividida em mais de um arquivo para melhor organização.
+from kivy.config import Config
+
+
 
 #construtor para criar a tela ao iniciar.
+
+#tamanho fixo da tela?
+
+
+Config.set('graphics', 'resizable', '0')
+
+Config.set('graphics', 'height', '917')
+
+Config.set('graphics', 'width', '412')
+
+
+
+#criação da tela + methodos basicos
 
 GUI = Builder.load_file("main.kv")
 class MainApp(App):
     def build(self):
+        self.title = 'Found-Flip'
         return GUI
     def on_start(self):
+
         pass
     #metodo para mudar de tela com base no id da tela.
     def mudar_tela(self, id_tela):

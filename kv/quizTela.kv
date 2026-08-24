@@ -1,0 +1,164 @@
+<quizTela>
+
+    FloatLayout:
+
+
+        #navbar superior (quiz)
+
+        FloatLayout:
+            pos_hint:{"right": 1,"top": 1}
+            size_hint:1 , 0.085
+            canvas:
+                Color
+                    rgb: utils.get_color_from_hex("27DF07")
+                Rectangle
+                    size: self.size
+                    pos: self.pos
+
+
+            # Button com background transparente com uma imagem em cima
+
+            Button:
+                pos_hint:{"right": 0.15,"top": 0.78}
+                size_hint: 0.10 , 0.55
+
+                # print pois não tenho a tela para utilizar meu metodo.
+
+                on_release: print("Voltar")
+                background_color: 0, 0, 0, 0
+
+                Image:
+                    size: self.parent.size
+                    source:"imgs/btnVoltar.png"
+                    center_x: self.parent.center_x
+                    center_y: self.parent.center_y
+
+
+            # dependendo de como ficar o icone de sequência, simplificar
+            # para ImageLabel.
+
+            Image:
+                pos_hint:{"right": 0.98,"top": 0.96}
+                size_hint: 0.2 , 0.9
+                source:"imgs/sequencia.png"
+
+
+
+
+
+
+
+    # elementos principais da tela, precisa realizar alguns ajustes
+    # antes de fazer o back-end.
+
+
+
+        Label:
+            pos_hint:{"right": 0.96,"top": 0.83}
+            size_hint: 0.92 , 0.23
+            text: "AAA"
+            bold: True
+            color: 0.024, 0.31, 0.067, 1
+            font_size: 20
+            canvas.before:
+                Color:
+                    rgb: utils.get_color_from_hex("CBE9C6")
+                RoundedRectangle:
+                    pos: self.pos
+                    size: self.size
+                    radius: [40]
+
+
+
+
+    # por enquanto usando apenas "button" como placeholder
+
+        Button:
+            pos_hint:{"right": 0.48,"top": 0.4}
+            size_hint: 0.46 , 0.15
+            text:""
+            on_release:print("opção1")
+        Button:
+            pos_hint:{"right": 0.98,"top": 0.4}
+            size_hint: 0.46 , 0.15
+            text:""
+            on_release:print("opção2")
+
+
+        Button:
+            pos_hint:{"right": 0.48,"top": 0.555}
+            size_hint: 0.46 , 0.15
+            text:""
+            on_release:print("opção3")
+        Button:
+            pos_hint:{"right": 0.98,"top": 0.555}
+            size_hint: 0.46 , 0.15
+            text:""
+            on_release:print("opção4")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        #navbar inferior
+
+        Image:
+            source:"imgs/VNavB1.png"
+            pos_hint:{"right": 0.96,"top": 0.14}
+            size_hint:0.92 , 0.07
+
+
+
+
+
+        # Usando grid layout para não precisar declarar a posição e tamanho
+        # de cada elemento, além disso ele irá dividir igualmente dentro do
+        # layout. caso não funcione, aplicar o mesmo estilo da navbar
+        # superior.
+
+        GridLayout:
+            rows: 1
+            pos_hint:{"right": 0.96,"top": 0.09}
+            size_hint:0.92 , 0.07
+            canvas:
+                Color
+                    rgb: utils.get_color_from_hex("27DF07")
+                RoundedRectangle
+                    size: self.size
+                    pos: self.pos
+                    radius: [40]
+
+
+
+
+
+
+
+            ImageButton:
+                on_release:print("1")
+                source:"imgs/icone1.png"
+            ImageButton:
+                on_release:print("2")
+                source:"imgs/icone2.png"
+            ImageButton:
+                on_release:print("3")
+                source:"imgs/icone3.png"
+            ImageButton:
+                on_release:print("4")
+                source:"imgs/icone4.png"
+            ImageButton:
+                on_release:print("5")
+                source:"imgs/icone5.png"
+
+
+

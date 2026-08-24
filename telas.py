@@ -1,4 +1,4 @@
 from kivy.uix.screenmanager import Screen
 
-class CorteOsGastos(Screen):
+class QuizTela(Screen):
     pass
