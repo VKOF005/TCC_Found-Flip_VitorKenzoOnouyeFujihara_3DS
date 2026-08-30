@@ -1,0 +1,3 @@
+
+    - as cores parecem diferentes do prototipo pois os elementos nao possuem bordas internas brancas e o efeito de mistura de 5 cores diferentes.
+

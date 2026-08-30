@@ -1,0 +1,113 @@
+<conecteOsConceitosTela>
+
+    FloatLayout:
+
+
+        #navbar superior (default)
+
+        FloatLayout:
+            pos_hint:{"right": 0.92,"top": 0.965}
+            size_hint:0.84 , 0.07
+            canvas:
+                Color
+                    rgb: utils.get_color_from_hex("27DF07")
+                RoundedRectangle
+                    size: self.size
+                    pos: self.pos
+                    radius: [40]
+
+
+    # as cordenadas parecem erradas mas pois seu ponto de referencia está no local errado
+    # mas isso não apresenta nenhum problema pois não há necessidade de mover os elementos
+    # da navbar.
+
+
+            Image:
+                pos_hint:{"right": 0.655,"top": 1}
+                size_hint:0.9 , 0.9
+
+                source: "imgs/icone6.png"
+
+            Image:
+                pos_hint:{"right": 0.95,"top": 1}
+                size_hint:0.9 , 0.9
+
+                source: "imgs/sequencia.png"
+            Image:
+                pos_hint:{"right": 1.15,"top": 0.8}
+                size_hint:0.7 , 0.7
+
+                source: "imgs/cargas.png"
+
+
+
+
+
+
+
+
+    # elementos principais da tela
+
+
+    ImageButton:
+        source: "imgs/btnVoltar2.png"
+
+
+
+
+
+
+
+
+        #navbar inferior
+
+        Image:
+            source:"imgs/VNavB1.png"
+            pos_hint:{"right": 0.96,"top": 0.14}
+            size_hint:0.92 , 0.07
+
+
+
+
+
+        # Usando grid layout para não precisar declarar a posição e tamanho
+        # de cada elemento, além disso ele irá dividir igualmente dentro do
+        # layout. caso não funcione, aplicar o mesmo estilo da navbar
+        # superior.
+
+        GridLayout:
+            rows: 1
+            pos_hint:{"right": 0.96,"top": 0.09}
+            size_hint:0.92 , 0.07
+            canvas:
+                Color
+                    rgb: utils.get_color_from_hex("27DF07")
+                RoundedRectangle
+                    size: self.size
+                    pos: self.pos
+                    radius: [40]
+
+
+
+
+
+
+
+            ImageButton:
+                on_release:print("1")
+                source:"imgs/icone1.png"
+            ImageButton:
+                on_release:print("2")
+                source:"imgs/icone2.png"
+            ImageButton:
+                on_release:print("3")
+                source:"imgs/icone3.png"
+            ImageButton:
+                on_release:print("4")
+                source:"imgs/icone4.png"
+            ImageButton:
+                on_release:print("configurações")
+                source:"imgs/configuracoes.png"
+
+
+

@@ -1,7 +1,11 @@
 from kivy.app import App
 from kivy.lang import Builder
+
+    #import de classes separadas para melhor visualização de partes do codigo
+
 from telas import *
 from elementosExtras import *
+
 
 from kivy.config import Config
 

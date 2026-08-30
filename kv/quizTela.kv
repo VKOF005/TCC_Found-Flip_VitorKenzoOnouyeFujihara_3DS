@@ -24,12 +24,15 @@
 
                 # print pois não tenho a tela para utilizar meu metodo.
 
-                on_release: print("Voltar")
+                on_release:
+                    print("Voltar")
+                    app.mudar_tela("XXX")
+
                 background_color: 0, 0, 0, 0
 
                 Image:
                     size: self.parent.size
-                    source:"imgs/btnVoltar.png"
+                    source:"imgs/btnVoltar1.png"
                     center_x: self.parent.center_x
                     center_y: self.parent.center_y
 
@@ -157,8 +160,8 @@
                 on_release:print("4")
                 source:"imgs/icone4.png"
             ImageButton:
-                on_release:print("5")
-                source:"imgs/icone5.png"
+                on_release:print("configurações")
+                source:"imgs/configuracoes.png"
 
 
 
