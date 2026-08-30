@@ -24,7 +24,10 @@
 
                 # print pois não tenho a tela para utilizar meu metodo.
 
-                on_release: print("Voltar")
+                on_release:
+                    print("Voltar")
+                    app.mudar_tela("XXX")
+
                 background_color: 0, 0, 0, 0
 
                 Image:
@@ -157,8 +160,8 @@
                 on_release:print("4")
                 source:"imgs/icone4.png"
             ImageButton:
-                on_release:print("5")
-                source:"imgs/icone5.png"
+                on_release:print("configurações")
+                source:"imgs/configuracoes.png"
 
 
 
