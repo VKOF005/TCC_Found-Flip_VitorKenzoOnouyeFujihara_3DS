@@ -24,10 +24,17 @@ Config.set('graphics', 'width', '412')
 
 
 
+
+
 #criação da tela + methodos basicos
 
 GUI = Builder.load_file("main.kv")
 class MainApp(App):
+
+
+
+    #"initialize" para o valor ser usado
+
     def build(self):
         self.title = 'Found-Flip'
         return GUI
@@ -39,5 +46,12 @@ class MainApp(App):
         print(id_tela)
         gerenciador_telas = self.root.ids["screen_manager"]
         gerenciador_telas.current = id_tela
+        pass
+
+
+
+    #metodo para comparar valores app com outros, isso acontece pois a classe esta importando (APP)
+
+
 
 MainApp().run()

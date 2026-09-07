@@ -49,15 +49,71 @@
     # elementos principais da tela
 
 
-    ImageButton:
-        source: "imgs/btnVoltar2.png"
+        ImageButton:
+            pos_hint:{"right": 0.15,"top": 0.89}
+            size_hint:0.1 , 0.1
+            source: "imgs/btnVoltar2.png"
+            on_release: root.decrease_counter()
 
 
 
+        # um box para agrupar as barras de progresso com base no metodo
+
+        BoxLayout:
+            orientation: ("horizontal")
+            pos_hint:{"right": 0.955,"top": 0.914}
+            size_hint:0.8 , 0.15
+
+            spacing: 20
+            padding: 10
+
+
+            Image:
+                source: "imgs/barra1.png"
+                id:"etapa1"
+
+
+            Image:
+                source: "imgs/barra1.png"
+                id:"etapa2"
+
+            Image:
+                source: "imgs/barra2.png"
+                id:"etapa3"
+
+            Image:
+                source: "imgs/barra2.png"
+                id:"etapa4"
+
+        #Nivel?
+
+        Label:
+            pos_hint:{"right": 0.2,"top": 0.8}
+            size_hint:0.15 , 0.03
+            text:("Nivel X") # falta a variavel
+            bold: True
+            canvas.before:
+                Color:
+                    rgb: utils.get_color_from_hex("#0E7422")
+                RoundedRectangle
+                    size: self.size
+                    pos: self.pos
+                    radius: [10]
+
+        #Texto fixo
+        Label:
+            color: 0.024, 0.31, 0.067, 1
+            pos_hint:{"right": 0.58,"top": 0.97}
+            size_hint:0.5 , 0.5
+            markup: True
+            text:("[size= 25][color=#111111]Conecte os conceitos [/color][/size]\n[size=18]Arraste cada conceito até a\ndefinição correta.[/size]")
 
 
 
-
+        Image:
+            pos_hint:{"right": 1.01,"top": 0.9}
+            size_hint:0.4 , 0.4
+            source:"imgs/mascote1.png"
 
         #navbar inferior
 
@@ -65,7 +121,6 @@
             source:"imgs/VNavB1.png"
             pos_hint:{"right": 0.96,"top": 0.14}
             size_hint:0.92 , 0.07
-
 
 
 
