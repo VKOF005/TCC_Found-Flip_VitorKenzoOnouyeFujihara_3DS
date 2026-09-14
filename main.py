@@ -31,16 +31,26 @@ Config.set('graphics', 'width', '412')
 GUI = Builder.load_file("main.kv")
 class MainApp(App):
 
-
+    counter = 2
 
     #"initialize" para o valor ser usado
 
     def build(self):
         self.title = 'Found-Flip'
         return GUI
+    
+    def decrease_counter(self):
+
+        current_screen = self.root.ids["screen_manager"].current_screen #current_screen faz parte da biblioteca kivy.
+        if hasattr(current_screen, 'decrease_counter'):
+            current_screen.decrease_counter()
+        print(f"Counter on screen: {getattr(current_screen, 'counter', 'N/A')}") # excceção caso não possua um valor.
+
+
     def on_start(self):
 
         pass
+
     #metodo para mudar de tela com base no id da tela.
     def mudar_tela(self, id_tela):
         print(id_tela)
@@ -49,8 +59,6 @@ class MainApp(App):
         pass
 
 
-
-    #metodo para comparar valores app com outros, isso acontece pois a classe esta importando (APP)
 
 
 

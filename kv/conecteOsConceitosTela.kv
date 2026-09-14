@@ -53,7 +53,7 @@
             pos_hint:{"right": 0.15,"top": 0.89}
             size_hint:0.1 , 0.1
             source: "imgs/btnVoltar2.png"
-            on_release: root.decrease_counter()
+            on_release: app.decrease_counter()
 
 
 
@@ -69,20 +69,20 @@
 
 
             Image:
-                source: "imgs/barra1.png"
+                source: root.bar1_image
                 id:"etapa1"
 
 
             Image:
-                source: "imgs/barra1.png"
+                source: root.bar2_image
                 id:"etapa2"
 
             Image:
-                source: "imgs/barra2.png"
+                source: root.bar3_image
                 id:"etapa3"
 
             Image:
-                source: "imgs/barra2.png"
+                source: root.bar4_image
                 id:"etapa4"
 
         #Nivel?
